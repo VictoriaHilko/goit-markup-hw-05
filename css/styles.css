@@ -152,17 +152,44 @@ body {
 }
 
 .list-item {
+    position: relative;
+
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
+
     color: var(--color-navy-blue);
+
+    transition: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.list-item::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+}
+
+.list-item.current::after,
+.list-item:hover::after,
+.list-item:focus::after {
+    background-color: var(--color-ocean);
+
 }
 
 .list-item:hover,
 .list-item:focus {
     color: var(--color-ocean);
+
 }
 
 .current {
@@ -179,6 +206,10 @@ body {
     list-style-type: none;
 
     color: var(--color-slate);
+
+    transition: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-item:hover,
@@ -261,11 +292,71 @@ body {
 
     cursor: pointer;
 
+    transition: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 .hero-button:hover,
 .hero-button:focus {
     background-color: var(--color-ocean);
+}
+
+/* Modal window styles */
+
+.backdrop {
+    /* display: none; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+
+    transition: opacity, visibility;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.modal {
+    position: absolute;
+    left: 516px;
+    top: 80px;
+
+    width: 408px;
+    min-height: 584px;
+    padding: 24px;
+
+    background: var(--color-dairy);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+
+}
+
+.modal-button {
+    display: block;
+    margin-left: auto;
+
+    width: 24px;
+    height: 24px;
+
+    border: none;
+    border-radius: 50%;
+
+    fill: currentColor;
+}
+
+.modal-button:hover,
+.modal-button:focus {
+    background-color: var(--color-ocean);
+    color: var(--color-white);
 }
 
 /* About */
@@ -417,6 +508,10 @@ body {
     color: var(--color-white);
     width: 40px;
     height: 40px;
+
+    transition: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .socials-icon {
@@ -465,6 +560,10 @@ body {
 
     color: var(--color-iris);
     cursor: pointer;
+
+    transition: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .list-filter:hover,
@@ -489,14 +588,52 @@ body {
     background-color: var(--color-white);
 }
 
+.filter-card:hover .overlay {
+    transform: translateY(0);
+}
+
+.portfolio-box {
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 40px 32px;
+
+    background-color: var(--color-iris);
+
+    transform: translateY(100%);
+
+    transition: transform;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-label {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+
+    color: var(--color-cloud);
+}
+
 .portfolio-card {
     padding: 32px 16px;
     border: 1px solid var(--color-cornflower);
     border-top: none;
 }
 
-.filter-link{
+.filter-link {
     display: block;
+
+    transition: box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter-link:hover,
@@ -552,6 +689,9 @@ body {
     border: 1px solid #8e8f99;
     border-radius: 4px;
 
+    transition: color, border-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-icon {
@@ -627,6 +767,7 @@ body {
 .footer-right-side .socials-icon {
     fill: var(--color-cloud);
 }
+
 
 .footer-right-side .socials-link:hover,
 .footer-right-side .socials-link:focus {
