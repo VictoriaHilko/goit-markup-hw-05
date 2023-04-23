@@ -171,7 +171,7 @@ body {
     content: '';
     display: block;
     position: absolute;
-    bottom: 0;
+    bottom: -1px;
     left: 0;
 
     width: 100%;
@@ -244,6 +244,7 @@ body {
 
 .hero {
     padding: 188px 0;
+    margin: auto;
     max-width: 1440px;
     text-align: center;
     background-color: var(--color-navy-blue);
@@ -306,7 +307,6 @@ body {
 /* Modal window styles */
 
 .backdrop {
-    /* display: none; */
     position: fixed;
     top: 0;
     left: 0;
@@ -329,6 +329,9 @@ body {
     position: absolute;
     left: 516px;
     top: 80px;
+    /* left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); */
 
     width: 408px;
     min-height: 584px;
@@ -349,6 +352,8 @@ body {
 
     border: none;
     border-radius: 50%;
+
+    cursor: pointer;
 
     fill: currentColor;
 }
@@ -561,7 +566,7 @@ body {
     color: var(--color-iris);
     cursor: pointer;
 
-    transition: color;
+    transition-property: color, background, border, box-shadow;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -588,7 +593,8 @@ body {
     background-color: var(--color-white);
 }
 
-.filter-card:hover .overlay {
+
+.filter-link:hover .overlay {
     transform: translateY(0);
 }
 
@@ -685,7 +691,7 @@ body {
     width: 168px;
     height: 88px;
 
-    color: #afb1b8;
+    color: #8e8f99;
     border: 1px solid #8e8f99;
     border-radius: 4px;
 
