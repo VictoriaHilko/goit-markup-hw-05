@@ -171,7 +171,7 @@ body {
     content: '';
     display: block;
     position: absolute;
-    bottom: -1px;
+    bottom: -10px;
     left: 0;
 
     width: 100%;
