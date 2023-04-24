@@ -349,7 +349,7 @@ body {
     width: 24px;
     height: 24px;
 
-    border: none;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
 
     cursor: pointer;
@@ -547,7 +547,6 @@ body {
 
 
 .list-filter {
-    min-width: 101px;
     padding: 12px 24px;
     margin: 0 auto;
 
@@ -593,6 +592,7 @@ body {
 }
 
 
+.filter-link:hover,
 .filter-link:hover .overlay {
     transform: translateY(0);
 }
