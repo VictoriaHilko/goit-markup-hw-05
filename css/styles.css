@@ -597,6 +597,11 @@ body {
     transform: translateY(0);
 }
 
+.filter-link:focus,
+.filter-link:focus .overlay {
+    transform: translateY(0);
+}
+
 .portfolio-box {
     position: relative;
     overflow: hidden;
